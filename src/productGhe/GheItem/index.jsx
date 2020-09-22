@@ -3,16 +3,10 @@ import { connect } from "react-redux";
 class GheItem extends Component {
   state = {
     isColor: true,
-    sv: {
-      TenGhe: "",
-      Gia: "",
-    },
   };
 
   handleChoseGhe = (e) => {
     e.preventDefault();
-
-    console.log(this.props.product.SoGhe);
     this.setState({
       isColor: !this.state.isColor,
     });
@@ -23,20 +17,19 @@ class GheItem extends Component {
     });
   };
 
-  showColor = () => {
-    return {
-      backgroundColor: "red",
-    };
-  };
   render() {
     const { SoGhe } = this.props.product;
     return (
       <div>
         {this.state.isColor ? (
           <button
-            className="btn btn-light mx-2 mt-2"
+            className={
+              this.props.product.TrangThai
+                ? "btn btn-danger mx-2 mt-2"
+                : "btn btn-light mx-2 mt-2"
+            }
             onClick={this.handleChoseGhe}
-            disabled={this.props.product.TrangThai ? true : false}
+            disabled={this.props.product.TrangThai}
           >
             {SoGhe}
           </button>

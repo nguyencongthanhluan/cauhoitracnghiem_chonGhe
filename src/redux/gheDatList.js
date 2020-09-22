@@ -5,17 +5,17 @@ const initialState = {
 const reducer = (state = initialState, { type, payload }) => {
   switch (type) {
     case "CHOOSE_GHE":
-      const mangGheUpdate = [...state.danhSachGheDangDat, payload];
-      state.danhSachGheDangDat = mangGheUpdate;
-      return { ...state };
-    case "DELETE_GHE":
-      const index = state.danhSachGheDangDat.findIndex(
-        (ghe) => ghe.SoGhe === payload
+      const mangGheUpdate = [...state.danhSachGheDangDat];
+      const index = mangGheUpdate.findIndex(
+        (ghe) => ghe.SoGhe === payload.SoGhe
       );
       if (index !== -1) {
-        state.danhSachGheDangDat.splice(index, 1);
+        mangGheUpdate.splice(index, 1);
+        state.danhSachGheDangDat = mangGheUpdate;
+      } else {
+        mangGheUpdate.push(payload);
+        state.danhSachGheDangDat = mangGheUpdate;
       }
-      // console.log(state, payload);
       return { ...state };
     default:
       return state;

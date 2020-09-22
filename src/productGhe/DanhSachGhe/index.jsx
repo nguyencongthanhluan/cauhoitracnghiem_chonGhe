@@ -19,11 +19,11 @@ class DanhSachGhe extends Component {
         className="container text-center py-5 mt-3"
         style={{ width: "500px", background: "gray" }}
       >
-        <h1>ĐẶT VÉ XE BUÝT</h1>
+        <h1 style={{ color: "#fff", paddingBottom: "2rem" }}>ĐẶT VÉ XE BUÝT</h1>
 
         <div className="row">
           <div className="col-6">
-            <button className="btn btn-danger px-5 mb-3">Tài xế</button>
+            <button className="btn btn-danger px-5 mb-3 w-100">Tài xế</button>
             <div className="row">{this.renderGhe()}</div>
           </div>
 
