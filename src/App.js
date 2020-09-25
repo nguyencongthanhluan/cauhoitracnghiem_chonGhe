@@ -1,4 +1,5 @@
 import React from "react";
+import Home from "./CauHoiTracNghiem/Home";
 // import Home from "../src/phone-exercise/Home";
 // import ProductGlasses from "./productGlasses";
 // import Home from "../src/dressingRoom/Screens/Home/Home";
@@ -14,6 +15,7 @@ function App() {
       {/* <Home /> */}
       <HomeComponent />
       {/* <HomeTracNghiem /> */}
+      <Home />
     </div>
   );
 }
